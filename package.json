@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
+    "gulp-coveralls": "^0.1.4",
     "gulp-exit": "0.0.2",
     "gulp-istanbul": "^1.1.1",
     "gulp-mocha": "^3.0.1",

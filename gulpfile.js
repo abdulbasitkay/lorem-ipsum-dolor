@@ -3,6 +3,7 @@ var models = require('./server/models');
 var exit = require('gulp-exit');
 var istanbul = require('gulp-istanbul');
 var mocha = require('gulp-mocha');
+var coveralls = require('gulp-coveralls');
 
 
 var paths = {
@@ -26,8 +27,12 @@ gulp.task('server:test',['db:sync', 'coverage-setup'], function () {
     .pipe(mocha())
     .pipe(istanbul.writeReports({
       dir: './test/coverage',
-      reporters: ['lcov']
     }));
 });
 
-gulp.task('test', ['server:test']);
+gulp.task('coveralls', function () {
+  return gulp.src('./test/coverage/lcov.info')
+    .pipe(coveralls());
+});
+
+gulp.task('test', ['server:test', 'coveralls']);
