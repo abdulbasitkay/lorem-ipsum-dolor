@@ -1,0 +1,33 @@
+{
+  "name": "school-portal",
+  "version": "1.0.0",
+  "description": "school portal for managing schools",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "school",
+    "portal",
+    "management"
+  ],
+  "author": "Verem Dugeri <verem.dugeri@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "path": "^0.12.7",
+    "pg": "^6.1.0",
+    "sequelize": "^3.24.3"
+  },
+  "devDependencies": {
+    "gulp-exit": "0.0.2",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-mocha": "^3.0.1",
+    "mocha": "^3.0.2",
+    "should": "^11.1.0"
+  }
+}
