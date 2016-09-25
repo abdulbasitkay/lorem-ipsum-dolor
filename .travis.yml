@@ -9,5 +9,7 @@ before_script:
 script: gulp test
 services:
   - postgresql
+env:
+  NODE_ENV=test
 before_script:
   - psql -c 'create database school_portal_test;' -U postgres
