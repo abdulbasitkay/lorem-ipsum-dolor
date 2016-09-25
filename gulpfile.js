@@ -25,7 +25,8 @@ gulp.task('server:test',['db:sync', 'coverage-setup'], function () {
   return gulp.src(paths.serverTest)
     .pipe(mocha())
     .pipe(istanbul.writeReports({
-      dir: './test/coverage'
+      dir: './test/coverage',
+      reporters: ['lcov']
     }));
 });
 
