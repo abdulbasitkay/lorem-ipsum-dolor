@@ -21,6 +21,7 @@
     "gulp": "^3.9.1",
     "path": "^0.12.7",
     "pg": "^6.1.0",
+    "q": "^1.4.1",
     "sequelize": "^3.24.3"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "gulp-mocha": "^3.0.1",
     "mocha": "^3.0.2",
     "mocha-lcov-reporter": "^1.2.0",
+    "node-mocks-http": "^1.5.4",
     "should": "^11.1.0"
   }
 }

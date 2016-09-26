@@ -16,7 +16,7 @@ describe('User Model', function () {
   };
 
   beforeEach(function (done) {
-    models.sequelize.sync().then(function () {
+    models.sequelize.sync({ force: true }).then(function () {
       models.Role.create(mockRole).then(function (role) {
         mockUser.RoleId = role.id;
         done();
@@ -24,7 +24,7 @@ describe('User Model', function () {
     });
   });
   afterEach(function (done) {
-    models.sequelize.sync().then(function () {
+    models.sequelize.sync({ force: true }).then(function () {
       done();
     });
   });

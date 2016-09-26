@@ -15,13 +15,13 @@ describe('Role model', function () {
   };
 
   beforeEach(function (done) {
-    models.sequelize.sync().then(function () {
+    models.sequelize.sync({ force: true }).then(function () {
       done();
     });
   });
 
   afterEach(function (done) {
-    models.sequelize.sync().then(function () {
+    models.sequelize.sync({ force: true }).then(function () {
       done();
     });
   });
