@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for models/payment.server.model.js</title>
+    <title>Code coverage report for controllers/role.server.controller.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">models/</a> payment.server.model.js
+      <a href="../index.html">all files</a> / <a href="index.html">controllers/</a> role.server.controller.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>22/22</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>12/12</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>22/22</span>
       </div>
     </div>
   </div>
@@ -71,7 +71,36 @@
 26
 27
 28
-29</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -79,53 +108,108 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = function(Sequelize, DataTypes) {
-  var Payment = Sequelize.define('Payment', {
-    id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true, unique: true },
-    amount: { type: DataTypes.DECIMAL, allowNull: false },
-    receiverId: { type: DataTypes.INTEGER, allowNull: false },
-  }, {
-    classMethods: {
-      associate: function (models) {
-        Payment.belongsTo(models.Student, {
-          foreignKey: {
-            allowNull: false
-          }
-        });
-        Payment.belongsTo(models.Term, {
-          foreignKey: {
-            allowNull: false
-          }
-        });
-        Payment.belongsTo(models.PaymentType, {
-          foreignKey: {
-            allowNull: false
-          }
-        });
-      }
-    }
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var models = require('../models');
+&nbsp;
+module.exports = {
+  index: index,
+  find: find,
+  update: update,
+  destroy: destroy
+};
+&nbsp;
+&nbsp;
+function index(req, res) {
+  models.Role.findAll().then(function (roles) {
+    return res.status(200).json(roles);
+  })
+  .catch(function(error) {
+    return res.status(500).json({ message: error.message });
   });
-  return Payment;
+}
+&nbsp;
+function find(req, res) {
+  var id = req.params.id;
+  models.Role.findById(id).then(function (role) {
+    return res.status(200).json(role);
+  })
+  .catch(function (err) {
+    return res.status(500).json({ message: err.message });
+  });
+}
+&nbsp;
+function update(req, res) {
+  var id = req.params.id;
+  var role = req.body.role;
+  models.Role.update(role, {
+    where: {
+      id: id
+    }
+  }).then(function (affectedRows) {
+    return res.status(200).json(role);
+  }).catch(function (err) {
+    return res.status(500).json({ message: err.message });
+  });
+}
+&nbsp;
+function destroy(req, res) {
+  var id = req.params.id;
+  models.Role.destroy({
+    where: {
+      id: id
+    }
+  }).then(function (deletedRows) {
+    return res.status(200).json({ message: 'Role deleted' });
+  })
+  .catch(function (err) {
+    return res.status(500).json({ message: err.message });
+  });
 }
 &nbsp;</pre></td></tr>
 </table></pre>
