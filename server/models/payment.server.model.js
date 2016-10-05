@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(Sequelize, DataTypes) {
   var Payment = Sequelize.define('Payment', {
     id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true, unique: true },

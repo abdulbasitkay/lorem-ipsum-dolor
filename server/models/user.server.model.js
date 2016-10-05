@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (Sequelize, DataTypes) {
     var User = Sequelize.define('User', {
         id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true, unique: true },

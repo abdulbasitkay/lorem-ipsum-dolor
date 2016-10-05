@@ -1,3 +1,5 @@
+'use strict';
+
 var Q = require('q'),
   should = require('should'),
   httpMocks = require('node-mocks-http'),

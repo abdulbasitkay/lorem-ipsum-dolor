@@ -1,4 +1,6 @@
-var should = require('should')
+'use strict';
+
+var should = require('should'),
   models = require('../../../server/models');
 
 

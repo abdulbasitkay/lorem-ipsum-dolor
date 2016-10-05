@@ -1,5 +1,7 @@
-var should = require('should')
-models = require('../../../server/models');
+'use strict';
+
+var should = require('should'),
+  models = require('../../../server/models');
 
 
 describe('User Model', function () {
@@ -83,7 +85,7 @@ describe('User Model', function () {
   it('should return a JSON object without a password', function (done) {
     models.User.create(mockUser).then(function (user) {
       should.exist(user);
-      userJSON = user.toJSON();
+      var userJSON = user.toJSON();
       should.not.exist(userJSON.password);
       done();
     });

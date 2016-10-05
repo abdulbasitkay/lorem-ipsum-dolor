@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (Sequelize, DataTypes) {
   var Term = Sequelize.define('Term', {
     id: { type:DataTypes.INTEGER, autoIncrement: true, primaryKey: true, unique: true },

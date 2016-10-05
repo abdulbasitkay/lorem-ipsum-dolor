@@ -1,3 +1,5 @@
+'use strict';
+
 var should = require('should'),
   models = require('../../../server/models');
 
@@ -16,7 +18,7 @@ describe('Payments Model', function () {
     lastName: 'Bone'
   };
 
-  mockTerm = {
+  var mockTerm = {
     name: 'First Term',
     session: '2016/2017'
   };
