@@ -17,6 +17,11 @@
   "author": "Verem Dugeri <verem.dugeri@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-logger": "0.0.3",
     "fs": "0.0.1-security",
     "gulp": "^3.9.1",
     "path": "^0.12.7",

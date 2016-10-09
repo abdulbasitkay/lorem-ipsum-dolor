@@ -93,6 +93,21 @@ describe('Roles controller', function () {
         done();
       });
     });
+    it('#save should save a record', function (done) {
+      mockRole.name = 'Super Admin';
+      req = httpMocks.createRequest({
+        body: {
+          role: mockRole
+        }
+      });
+      controllers.rolesController.save(req, res);
+      res.on('end', function () {
+        var data = JSON.parse(res._getData());
+        should.exist(data);
+        data.name.should.equal('Super Admin');
+        done();
+      });
+    });
   });
 
   describe('Errors', function () {

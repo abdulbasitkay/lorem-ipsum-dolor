@@ -233,4 +233,49 @@ describe('UserController', function () {
       });
     });
   });
+  describe('#save', function () {
+    describe('No Errors', function () {
+      it('should save a user', function (done) {
+        var req = httpMocks.createRequest({
+          body: {
+            user: mockUser
+          }
+        });
+        controllers.userController.save(req, res);
+        res.on('end', function () {
+          var data = JSON.parse(res._getData());
+          should.exist(data);
+          res.statusCode.should.equal(200);
+          data.username.should.equal(mockUser.username);
+          done();
+        });
+      });
+    });
+    // describe('Errors', function () {
+    //   var promise = models.User.create;
+    //   before(function () {
+    //     var deferred = Q.defer();
+    //     models.User.create = function () { return deferred.promise; };
+    //     deferred.reject(error);
+    //   });
+    //   after(function () {
+    //     models.User.create = promise;
+    //   });
+    //   it('should return status code 500', function (done) {
+    //     var req = httpMocks.createRequest({
+    //       body: {
+    //         user: mockUser
+    //       }
+    //     });
+    //     controllers.userController.save(req, res);
+    //     res.on('end', function () {
+    //       console.log(res._getData());
+    //       var data = JSON.parse(res._getData());
+    //       res.statusCode.should.equal(500);
+    //       data.message.should.equal(error.message);
+    //       done();
+    //     });
+    //   });
+    // });
+  });
 });
