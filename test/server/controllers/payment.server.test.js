@@ -1,3 +1,5 @@
+'use strict';
+
 var models = require('./../../../server/models');
 var controllers = require('./../../../server/controllers');
 var should = require('should');
@@ -5,7 +7,17 @@ var Q = require('q');
 var httpMocks = require('node-mocks-http');
 
 
-var mockUser, mockStudent, mockPayment, id, req, res, error, promise;
+var mockUser, 
+  mockStudent, 
+  mockPayment, 
+  mockTerm, 
+  paymentType, 
+  mockRole, 
+  id, 
+  req, 
+  res, 
+  error, 
+  promise;
 
 describe('Payments Controller', function () {
   mockStudent = {

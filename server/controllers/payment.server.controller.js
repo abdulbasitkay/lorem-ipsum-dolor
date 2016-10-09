@@ -1,3 +1,5 @@
+'use strict';
+
 var models = require('./../models');
 
 module.exports = {
@@ -40,7 +42,7 @@ function find(req, res) {
 
 function update(req, res) {
   var id = req.params.id;
-  payment = req.body.payment;
+  var payment = req.body.payment;
   models.Payment.update(payment, {
     where: {
       id: id
