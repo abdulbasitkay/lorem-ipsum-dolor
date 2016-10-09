@@ -6,7 +6,8 @@ module.exports = {
   index: index,
   find: find,
   destroy: destroy,
-  update: update
+  update: update,
+  save: save
 }
 
 function index(req, res) {
@@ -49,5 +50,15 @@ function update(req, res) {
   })
   .catch(function (error) {
     res.status(500).json({ message: error.message });
+  });
+}
+
+function save(req, res) {
+  var user = req.body.user;
+  models.User.create(user).then(function (user) {
+    return res.status(200).json(user);
+  })
+  .catch(function (err) {
+    return res.status(500).json({ message: err.message});
   });
 }
