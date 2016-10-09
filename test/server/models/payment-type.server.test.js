@@ -45,7 +45,7 @@ describe('PaymetType model', function () {
   it('should find a record in the database', function (done) {
     models.PaymentType.create(mockPaymentType).then(function (type) {
       should.exist(type);
-      models.PaymentType.findById(type.id).then(function (_type) {
+      models.PaymentType.findOne({ where: {id: type.id}}).then(function (_type) {
         should.exist(_type);
         _type.name.should.equal(type.name);
         done();
