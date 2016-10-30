@@ -4,6 +4,10 @@ node_js:
   - "5"
   - "4"
   - "iojs"
+before_install:
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get -qq update
+  - sudo apt-get -qq install g++-4.8  
 before_script:
   - npm install -g gulp
 script:
@@ -11,6 +15,7 @@ script:
 services:
   - postgresql
 env:
-  NODE_ENV=test
+  - NODE_ENV=test
+  - CXX=g++-4.8
 before_script:
   - psql -c 'create database school_portal_test;' -U postgres
