@@ -1,5 +1,3 @@
-'use strict';
-
 var models = require('./../models');
 
 module.exports = {
@@ -8,7 +6,7 @@ module.exports = {
   find: find,
   update: update,
   destroy: destroy
-}
+};
 
 
 function index(req, res) {
@@ -47,7 +45,7 @@ function update(req, res) {
     where: {
       id: id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     return res.status(200).json({ updated: true, payment: payment });
   })
   .catch(function (error) {
@@ -61,7 +59,7 @@ function destroy(req, res) {
     where: {
       id:id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     return res.status(200).json({ message: 'Payment deleted' });
   })
   .catch(function (error) {

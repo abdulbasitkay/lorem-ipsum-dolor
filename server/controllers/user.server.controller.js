@@ -1,14 +1,17 @@
-'use strict';
 
 var models = require('../models');
+var encrypter = require('../utils/token');
+var mailer = require('../utils/mailer');
+var mailRedirect = process.env.MAIL_REDIRECT;
 
 module.exports = {
   index: index,
   find: find,
   destroy: destroy,
   update: update,
-  save: save
-}
+  save: save,
+  sendMail: sendMail
+};
 
 function index(req, res) {
   models.User.findAll().then(function (users) {
@@ -35,7 +38,7 @@ function destroy(req, res) {
     where: {
       id:id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     res.status(200).json({ message: 'User account deleted' });
   })
   .catch(function (error) {
@@ -60,5 +63,31 @@ function save(req, res) {
   })
   .catch(function (err) {
     return res.status(500).json({ message: err.message});
+  });
+}
+
+function sendMail(req, res) {
+  var emailAddress = req.body.email;
+  var hashString =  req.body.activationCode + '-' + emailAddress;
+  var subject = 'School Portal: Complete your registration';
+
+  encrypter.createHash(hashString).then(function (hash) {
+    var text = 'Welcome. Please follow this link to complete your registration ' +
+      mailRedirect + '/'  + hash;
+    var regToken = {
+      token: hash,
+      email: emailAddress
+    };
+    mailer.sendMail(emailAddress, subject, text).then(function (info) {
+      models.RegToken.create(regToken).then(function () {
+        return res.status(200).json(info);
+      }).catch(function (err) {
+        console.log(err);
+        res.status(500).json(err);
+      })
+    }).catch(function (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    });
   });
 }

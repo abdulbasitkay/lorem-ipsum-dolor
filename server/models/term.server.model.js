@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = function (Sequelize, DataTypes) {
   var Term = Sequelize.define('Term', {
@@ -7,4 +7,4 @@ module.exports = function (Sequelize, DataTypes) {
     session: { type: DataTypes.STRING }
   });
   return Term;
-}
+};

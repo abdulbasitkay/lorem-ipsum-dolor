@@ -1,4 +1,4 @@
-'use strict';
+
 
 var models = require('../models');
 
@@ -37,7 +37,7 @@ function update(req, res) {
     where: {
       id: id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     return res.status(200).json(role);
   }).catch(function (err) {
     return res.status(500).json({ message: err.message });
@@ -50,7 +50,7 @@ function destroy(req, res) {
     where: {
       id: id
     }
-  }).then(function (deletedRows) {
+  }).then(function () {
     return res.status(200).json({ message: 'Role deleted' });
   })
   .catch(function (err) {

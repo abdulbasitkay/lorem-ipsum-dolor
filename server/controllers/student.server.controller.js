@@ -1,4 +1,4 @@
-'use strict';
+
 
 var models = require('./../models');
 
@@ -29,7 +29,7 @@ function update(req, res) {
     where: {
       id: id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     return res.status(200).json({ message: 'Student details updated', student: student });
   })
   .catch(function (error) {
@@ -43,7 +43,7 @@ function destroy(req, res) {
     where: {
       id: id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     return res.status(200).json({ message: 'Student record deleted' });
   })
   .catch(function (error) {

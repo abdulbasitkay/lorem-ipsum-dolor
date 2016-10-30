@@ -1,5 +1,3 @@
-'use strict';
-
 var models = require('../models');
 
 
@@ -46,7 +44,7 @@ function destroy(req, res) {
     where: {
       id: id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     return res.status(200).json({ message: 'Payment type deleted' });
   })
   .catch(function (err) {
@@ -61,7 +59,7 @@ function update(req, res) {
     where: {
       id: id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     return res.status(200).json({ updated: true, type: type });
   })
   .catch(function (err) {

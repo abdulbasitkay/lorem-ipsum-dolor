@@ -1,5 +1,9 @@
 'use strict';
 
+var bcrypt = require('bcrypt');
+var Q = require('q');
+
+
 module.exports = function (Sequelize, DataTypes) {
     var User = Sequelize.define('User', {
         id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true, unique: true },
@@ -14,6 +18,18 @@ module.exports = function (Sequelize, DataTypes) {
                 var value = this.get();
                 delete value.password;
                 return value;
+            },
+            matchPasswords: function (candidatePassword, hash) {
+              var deferred = Q.defer();
+              bcrypt.compare(candidatePassword, hash, function (err, res) {
+                if (err) {
+                  deferred.reject(err);
+                } else {
+                  deferred.resolve(res);
+                }
+              });
+
+              return deferred.promise;
             }
         },
         classMethods: {
@@ -27,5 +43,18 @@ module.exports = function (Sequelize, DataTypes) {
             }
         }
     });
+
+    User.beforeCreate(function (user, options,next) {
+      bcrypt.genSalt(10, function (err, salt) {
+        bcrypt.hash(user.password, salt, function (err, hashed) {
+          if(err) {
+            next(err);
+          } 
+          user.password = hash;
+          next();
+        });
+      });
+    });
+
     return User;
 };

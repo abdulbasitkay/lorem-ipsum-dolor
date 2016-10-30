@@ -1,4 +1,5 @@
 'use strict';
+
 require('dotenv').load();
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -19,6 +20,11 @@ app.use(logger({path: './logs/express.log'}));
 
 function start() {
   routes(app);
+  
+  app.use('*', function (req, res, next) {
+    return res.status(404).json({message: 'route not found'});
+  });
+
   var port = process.env.port;
   models.sequelize.sync({ force: true}).then(function () {
     app.listen(port, function () {

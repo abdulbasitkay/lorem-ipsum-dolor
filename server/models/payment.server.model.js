@@ -27,4 +27,4 @@ module.exports = function(Sequelize, DataTypes) {
     }
   });
   return Payment;
-}
+};

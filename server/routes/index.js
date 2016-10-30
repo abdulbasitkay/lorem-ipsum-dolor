@@ -1,9 +1,9 @@
-'use strict';
+
 
 var controllers = require('./../controllers');
 
 module.exports = function (app) {
-
+  'use strict';
 
   /* user routes */
   app.get('/users', controllers.userController.index);
@@ -11,6 +11,7 @@ module.exports = function (app) {
   app.put('/users/:id', controllers.userController.update);
   app.get('/users/:id', controllers.userController.find);
   app.delete('/users/:id', controllers.userController.destroy);
+  app.post('/users/email/confirm', controllers.userController.sendMail);
 
   /* Payment routes */
   app.get('/payments', controllers.paymentsController.index);
@@ -46,4 +47,4 @@ module.exports = function (app) {
   app.put('/terms/:id', controllers.termController.update);
   app.get('/terms/:id', controllers.termController.find);
   app.delete('/terms/:id', controllers.termController.destroy);
-}
+};

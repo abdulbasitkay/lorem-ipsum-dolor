@@ -1,4 +1,3 @@
-'use strict';
 
 module.exports = function (Sequelize, DataTypes) {
   var Student = Sequelize.define('Student', {
@@ -18,4 +17,4 @@ module.exports = function (Sequelize, DataTypes) {
     }
   });
   return Student;
-}
+};

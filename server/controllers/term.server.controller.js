@@ -1,4 +1,4 @@
-'use strict';
+
 
 var models = require('../models');
 
@@ -8,7 +8,7 @@ module.exports = {
   save: save,
   update: update,
   destroy: destroy
-}
+};
 
 function find(req, res) {
   var id = req.params.id;
@@ -46,7 +46,7 @@ function update(req, res) {
     where: {
       id: id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     return res.status(200).json(term);
   })
   .catch(function (err) {
@@ -60,7 +60,7 @@ function destroy(req, res) {
     where: {
       id: id
     }
-  }).then(function (affectedRows) {
+  }).then(function () {
     return res.status(200).json({message: 'Term deleted'});
   })
   .catch(function (err) {

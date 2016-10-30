@@ -7,4 +7,4 @@ module.exports = function (Sequelize, DataTypes) {
   });
 
   return PaymentType;
-}
+};
