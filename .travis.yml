@@ -17,4 +17,4 @@ script:
 services:
   - postgresql
 env:
-  - NODE_ENV=test
+ - CXX=g++-4.8
