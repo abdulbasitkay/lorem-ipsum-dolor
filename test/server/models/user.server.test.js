@@ -90,4 +90,41 @@ describe('User Model', function () {
       done();
     });
   });
+  it('should hash a user password', function (done) {
+    models.User.create(mockUser).then(function (user) {
+      should.exist(user);
+      user.password.should.not.equal(mockUser.password);
+      done();
+    });
+  });
+  it('should match user passwords', function (done) {
+    models.User.create(mockUser).then(function (user) {
+      user.matchPasswords(mockUser.password, user.password).then(function (res) {
+        should.exist(res);
+        res.should.equal(true);
+        done();
+      });
+    });
+  });
+  it('should reject the wrong password', function (done) {
+    models.User.create(mockUser).then(function (user) {
+      var candidatePassword = null;
+      user.matchPasswords(candidatePassword, user.password).then(function (matched) {
+        matched.should.equal(false);
+        done();
+      }).catch(function (err) {
+        should.exist(err);
+        done();
+      });
+    });
+  });
+  it('should not hash a null password', function (done) {
+    mockUser.password = null;
+    models.User.create(mockUser).then(function (user) {
+      done();
+    }).catch(function (err) {
+      should.exist(err);
+      done();
+    });
+  });
 });

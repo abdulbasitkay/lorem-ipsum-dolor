@@ -82,11 +82,9 @@ function sendMail(req, res) {
       models.RegToken.create(regToken).then(function () {
         return res.status(200).json(info);
       }).catch(function (err) {
-        console.log(err);
         res.status(500).json(err);
       })
     }).catch(function (err) {
-      console.log(err);
       return res.status(500).json(err);
     });
   });

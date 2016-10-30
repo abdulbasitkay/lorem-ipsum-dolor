@@ -21,11 +21,11 @@ module.exports = function (Sequelize, DataTypes) {
             },
             matchPasswords: function (candidatePassword, hash) {
               var deferred = Q.defer();
-              bcrypt.compare(candidatePassword, hash, function (err, res) {
+              bcrypt.compare(candidatePassword, hash, function (err, matched) {
                 if (err) {
                   deferred.reject(err);
                 } else {
-                  deferred.resolve(res);
+                  deferred.resolve(matched);
                 }
               });
 
@@ -50,7 +50,7 @@ module.exports = function (Sequelize, DataTypes) {
           if(err) {
             next(err);
           } 
-          user.password = hash;
+          user.password = hashed;
           next();
         });
       });

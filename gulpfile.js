@@ -29,6 +29,7 @@ gulp.task('db:sync', function () {
 
 gulp.task('server:test',['db:sync', 'coverage-setup'], function () {
   process.env.NODE_ENV = 'test';
+  process.env.APP_KEY='7kaVAaNj4ON1xbt6MQkki4ILzzMaKaVD';
   return gulp.src(paths.serverTest)
     .pipe(mocha())
     .pipe(istanbul.writeReports({
