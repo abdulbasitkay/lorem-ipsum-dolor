@@ -16,6 +16,5 @@ services:
   - postgresql
 env:
   - NODE_ENV=test
-  - CXX=g++-4.8
 before_script:
   - psql -c 'create database school_portal_test;' -U postgres
