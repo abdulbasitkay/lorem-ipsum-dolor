@@ -12,6 +12,11 @@ module.exports = function (app) {
   app.get('/users/:id', controllers.userController.find);
   app.delete('/users/:id', controllers.userController.destroy);
   app.post('/users/email/confirm', controllers.userController.sendMail);
+  
+
+  /* Auth routes */
+  app.post('/users/token/confirm', controllers.authController.matchTokens);
+  app.get('/tokens/:email/', controllers.authController.getToken);
 
   /* Payment routes */
   app.get('/payments', controllers.paymentsController.index);

@@ -73,7 +73,7 @@ function sendMail(req, res) {
 
   encrypter.createHash(hashString).then(function (hash) {
     var text = 'Welcome. Please follow this link to complete your registration ' +
-      mailRedirect + '/'  + hash;
+      mailRedirect + '?token='  + hash;
     var regToken = {
       token: hash,
       email: emailAddress

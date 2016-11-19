@@ -6,6 +6,7 @@ var termController = require('./term.server.controller');
 var studentController = require('./student.server.controller');
 var paymentsController = require('./payment.server.controller');
 var paymenttypeController = require('./payment-type.server.controller');
+var authController = require('./auth.server.controller');
 
 module.exports = {
   userController: userController,
@@ -13,5 +14,6 @@ module.exports = {
   termController: termController,
   studentController: studentController,
   paymentsController: paymentsController,
-  paymenttypeController: paymenttypeController
+  paymenttypeController: paymenttypeController,
+  authController: authController
 };

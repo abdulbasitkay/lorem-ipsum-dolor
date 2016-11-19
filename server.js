@@ -26,7 +26,7 @@ function start() {
   });
 
   var port = process.env.port;
-  models.sequelize.sync({ force: true}).then(function () {
+  models.sequelize.sync().then(function () {
     app.listen(port, function () {
       console.log('Server is listening at port ' + port);
     });
