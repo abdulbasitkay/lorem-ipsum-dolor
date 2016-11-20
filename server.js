@@ -1,12 +1,11 @@
-'use strict';
 
 require('dotenv').load();
-var express = require('express');
-var bodyParser = require('body-parser');
-var routes = require('./server/routes');
-var models = require('./server/models');
-var cors = require('cors');
-var logger = require('express-logger');
+const express = require('express');
+const bodyParser = require('body-parser');
+const routes = require('./server/routes');
+const models = require('./server/models');
+const cors = require('cors');
+const logger = require('express-logger');
 
 
 var app = express();
@@ -24,7 +23,7 @@ function start() {
     return res.status(404).json({message: 'route not found'});
   });
 
-  var port = process.env.port;
+  const port = process.env.port;
   models.sequelize.sync({ force: true }).then(function () {
     app.listen(port, function () {
       console.log('Server is listening at port ' + port);

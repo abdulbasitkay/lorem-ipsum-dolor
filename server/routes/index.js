@@ -1,24 +1,19 @@
 
 
-var controllers = require('./../controllers');
+const controllers = require('./../controllers');
 
 module.exports = function (app) {
-  'use strict';
 
   /* user routes */
   app.get('/users', controllers.userController.index);
   app.post('/users', controllers.userController.save);
   app.put('/users/:id', controllers.userController.update);
+  app.get('/users/match/:username', controllers.userController.findByUsername);
   app.get('/users/:id', controllers.userController.find);
   app.delete('/users/:id', controllers.userController.destroy);
+  app.post('/users/email/', controllers.userController.findByEmail);
   app.post('/users/email/confirm', controllers.userController.sendMail);
-  app.get('/users.match/:usernme', controllers.userController.findByUsername);
 
-
-
-  /* Auth routes */
-  app.post('/users/token/confirm', controllers.authController.matchTokens);
-  app.get('/tokens/:email/', controllers.authController.getToken);
 
   /* Payment routes */
   app.get('/payments', controllers.paymentsController.index);
@@ -55,4 +50,14 @@ module.exports = function (app) {
   app.put('/terms/:id', controllers.termController.update);
   app.get('/terms/:id', controllers.termController.find);
   app.delete('/terms/:id', controllers.termController.destroy);
+
+  /* token routes */
+  app.post('/tokens', controllers.tokenController.save);
+  app.post('/tokens/match', controllers.tokenController.match);
+  app.get('/tokens/:id', controllers.tokenController.find);
+  app.delete('/tokens/:id', controllers.tokenController.destroy);
+  app.post('/tokens/email/find', controllers.tokenController.findByEmail);
+
+  /* Auth routes */
+  app.post('/auth/login', controllers.authController.login);
 };

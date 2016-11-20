@@ -1,13 +1,13 @@
 'use strict';
 
-var Q = require('q');
-var host = process.env.MAIL_HOST;
-var port = process.env.MAIL_PORT;
-var username = process.env.MAIL_USER;
-var NodeMailer = require('nodemailer');
-var password = process.env.MAIL_PASSWORD;
-var protocol = process.env.MAIL_PROTOCOL;
-var from = process.env.MAIL_FROM;
+const Q = require('q');
+const host = process.env.MAIL_HOST;
+const port = process.env.MAIL_PORT;
+const username = process.env.MAIL_USER;
+const NodeMailer = require('nodemailer');
+const password = process.env.MAIL_PASSWORD;
+const protocol = process.env.MAIL_PROTOCOL;
+const from = process.env.MAIL_FROM;
 
 
 module.exports = {
@@ -16,8 +16,8 @@ module.exports = {
 
 
 function sendMail(to, subject, text) {
-  var deferred = Q.defer();
-  var smtpConfig = {
+  const deferred = Q.defer();
+  const smtpConfig = {
     host: host,
     port: port,
     auth: {
@@ -26,14 +26,14 @@ function sendMail(to, subject, text) {
     }
   };
 
-  var mailOptions = {
+  const mailOptions = {
     from: from,
     to: to,
     subject: subject,
     text: text
   };
 
-  var transporter = NodeMailer.createTransport(protocol, smtpConfig);
+  const transporter = NodeMailer.createTransport(protocol, smtpConfig);
   transporter.sendMail(mailOptions, function (err, res) {
     if (err) {
       deferred.reject(err);

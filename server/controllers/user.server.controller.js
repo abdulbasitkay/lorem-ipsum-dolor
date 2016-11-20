@@ -1,9 +1,8 @@
-'use strict';
 
-var models = require('../models');
-var encrypter = require('../utils/token');
-var mailer = require('../utils/mailer');
-var mailRedirect = process.env.MAIL_REDIRECT;
+const models = require('../models');
+const encrypter = require('../utils/token');
+const mailer = require('../utils/mailer');
+const mailRedirect = process.env.MAIL_REDIRECT;
 
 module.exports = {
   index: index,
@@ -26,7 +25,7 @@ function index(req, res) {
 }
 
 function find(req, res) {
-  var id = req.params.id;
+  const id = req.params.id;
   models.User.findById(id).then(function (user) {
     res.status(200).json(user);
   })
@@ -36,7 +35,7 @@ function find(req, res) {
 }
 
 function destroy(req, res) {
-  var id = req.params.id;
+  const id = req.params.id;
   models.User.destroy({
     where: {
       id:id
@@ -60,7 +59,7 @@ function update(req, res) {
 }
 
 function save(req, res) {
-  var user = req.body.user;
+  const user = req.body.user;
   models.User.create(user).then(function (user) {
     return res.status(200).json(user);
   })
@@ -70,41 +69,47 @@ function save(req, res) {
 }
 
 function findByUsername(req, res) {
-  var username = req.body.username;
+  const username = req.params.username;
   models.User.findOne({
     where: {
       username: username
     }
   }).then(function (user) {
-    return res.status(200).json(user);
+    if(user) {
+      return res.status(200).json(user);
+    }
+    return res.status(404).json({ message: 'User not found' });
   }).catch(function (err) {
     return res.status(500).json({message: err.message});
   });
 }
 
 function findByEmail(req, res) {
-  var email = req.body.email;
+  const email = req.body.email;
   models.User.findOne({
     where: {
       emailAddress: email
     }
   }).then(function (user) {
-    return res.status(200).json(user);
+    if(user) {
+      return res.status(200).json(user);
+    }
+    return res.status(404).json({ message: 'User not found' })
   }).catch(function (err) {
     return res.status(500).json({ message: err.message });
   });
 }
 
 function sendMail(req, res) {
-  var emailAddress = req.body.email;
-  var hashString =  req.body.activationCode + '-' + emailAddress;
-  var role = req.body.role;
-  var subject = 'School Portal: Complete your registration';
+  const emailAddress = req.body.email;
+  const hashString =  req.body.activationCode + '-' + emailAddress;
+  const role = req.body.role;
+  const subject = 'School Portal: Complete your registration';
 
   encrypter.createHash(hashString).then(function (hash) {
-    var text = 'Welcome. Please follow this link to complete your registration ' +
-      mailRedirect + '?token='  + hash;
-    var regToken = {
+    const text = 'Welcome. Please follow this link to complete your registration ' +
+      mailRedirect + '?token='  + encodeURIComponent(hash);
+    const regToken = {
       token: hash,
       email: emailAddress,
       role: role,

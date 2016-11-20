@@ -1,12 +1,13 @@
 
 
-var userController = require('./user.server.controller');
-var rolesController = require('./role.server.controller');
-var termController = require('./term.server.controller');
-var studentController = require('./student.server.controller');
-var paymentsController = require('./payment.server.controller');
-var paymenttypeController = require('./payment-type.server.controller');
-var authController = require('./auth.server.controller');
+const userController = require('./user.server.controller');
+const rolesController = require('./role.server.controller');
+const termController = require('./term.server.controller');
+const studentController = require('./student.server.controller');
+const paymentsController = require('./payment.server.controller');
+const paymenttypeController = require('./payment-type.server.controller');
+const authController = require('./auth.server.controller');
+const tokenController = require('./token.server.controller');
 
 module.exports = {
   userController: userController,
@@ -15,5 +16,6 @@ module.exports = {
   studentController: studentController,
   paymentsController: paymentsController,
   paymenttypeController: paymenttypeController,
-  authController: authController
+  authController: authController,
+  tokenController: tokenController,
 };
