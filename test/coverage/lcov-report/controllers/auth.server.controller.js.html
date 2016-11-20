@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20.69% </span>
+        <span class="strong">30.77% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/29</span>
+        <span class='fraction'>4/13</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/11</span>
+        <span class='fraction'>0/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20.69% </span>
+        <span class="strong">30.77% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/29</span>
+        <span class='fraction'>4/13</span>
       </div>
     </div>
   </div>
@@ -73,49 +73,11 @@
 28
 29
 30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+31</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -141,65 +103,29 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var models = require('./../models');
-var TokenGen = require('./../utils/token');
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const models = require('./../models');
+const TokenGen = require('./../utils/token');
 &nbsp;
 &nbsp;
 module.exports = {
   login: login,
-  getToken: getToken,
-  matchTokens: matchTokens,
-}
+};
 &nbsp;
 <span class="fstat-no" title="function not covered" >function login(req, res) {</span>
-<span class="cstat-no" title="statement not covered" >  var email = req.body.user.email;</span>
-<span class="cstat-no" title="statement not covered" >  var password = req.body.user.password;</span>
+<span class="cstat-no" title="statement not covered" >  const username = req.body.user.username;</span>
+<span class="cstat-no" title="statement not covered" >  const password = req.body.user.password;</span>
 <span class="cstat-no" title="statement not covered" >  models.User.findOne({</span>
     where: {
-      email: email
+      username: username
     }
   }).then(<span class="fstat-no" title="function not covered" >function (user) {</span>
 <span class="cstat-no" title="statement not covered" >    if(!user) {</span>
 <span class="cstat-no" title="statement not covered" >      return res.status(404).json({ message: 'User account does not exist' });</span>
     }
-<span class="cstat-no" title="statement not covered" >    user.matchPasswords(password, user.password).then(<span class="fstat-no" title="function not covered" >function (matched) {</span></span>
+<span class="cstat-no" title="statement not covered" >    user.matchPasswords(password, user.password).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
 <span class="cstat-no" title="statement not covered" >      return res.status(200).json({ user: user, token: TokenGen.createToken(user)});</span>
     })
-    .catch(<span class="fstat-no" title="function not covered" >function (err) {</span>
+    .catch(<span class="fstat-no" title="function not covered" >function () {</span>
 <span class="cstat-no" title="statement not covered" >      return res.status(409).json({ message: 'Invalid username or password' });</span>
     });
   })
@@ -207,47 +133,13 @@ module.exports = {
 <span class="cstat-no" title="statement not covered" >    return res.status(500).json({ message: err.message });</span>
   });
 }
-&nbsp;
-<span class="fstat-no" title="function not covered" >function matchTokens(req, res) {</span>
-<span class="cstat-no" title="statement not covered" >  var email = req.body.email;</span>
-<span class="cstat-no" title="statement not covered" >  var token = req.body.token;</span>
-<span class="cstat-no" title="statement not covered" >  console.log(token, email);</span>
-<span class="cstat-no" title="statement not covered" >  models.RegToken.findOne({</span>
-    where: {
-      email: email,
-      token: token
-    }
-  }).then(<span class="fstat-no" title="function not covered" >function (result) {</span>
-<span class="cstat-no" title="statement not covered" >    if(result) {</span>
-<span class="cstat-no" title="statement not covered" >      return res.status(200).json({ success: true, message: 'Confirmation token found' })</span>
-    }
-<span class="cstat-no" title="statement not covered" >    return res.status(404).json({ success: false, message: 'Confirmation token not found' });</span>
-  }).catch(<span class="fstat-no" title="function not covered" >function (err) {</span>
-<span class="cstat-no" title="statement not covered" >    return res.status(500).json({ message: err.message });</span>
-  });
-}
-&nbsp;
-<span class="fstat-no" title="function not covered" >function getToken(req, res) {</span>
-<span class="cstat-no" title="statement not covered" >  var emailAddress = req.params.email;</span>
-<span class="cstat-no" title="statement not covered" >  models.RegToken.findOne({</span>
-    where: {
-      email: emailAddress
-    }
-  }).then(<span class="fstat-no" title="function not covered" >function (token) {</span>
-<span class="cstat-no" title="statement not covered" >    if(token) {</span>
-<span class="cstat-no" title="statement not covered" >      return res.status(200).json(token);</span>
-    }
-<span class="cstat-no" title="statement not covered" >    return res.status(404).json({ message: 'Token not found' });</span>
-  }).catch(<span class="fstat-no" title="function not covered" >function (err) {</span>
-<span class="cstat-no" title="statement not covered" >    return res.status(500).json({ message: err.message });</span>
-  });
-}</pre></td></tr>
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 19 2016 18:52:45 GMT+0100 (WAT)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 20 2016 17:44:32 GMT+0100 (WAT)
 </div>
 </div>
 <script src="../prettify.js"></script>

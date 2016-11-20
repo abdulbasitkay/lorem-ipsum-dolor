@@ -7,9 +7,9 @@ var Q = require('q');
 module.exports = function (Sequelize, DataTypes) {
     var User = Sequelize.define('User', {
         id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true, unique: true },
-        username: { type:DataTypes.STRING, unique: true },
+        username: { type:DataTypes.STRING},
         password: { type: DataTypes.STRING },
-        emailAddress: { type: DataTypes.STRING, unique: true },
+        emailAddress: { type: DataTypes.STRING},
         firstName: { type: DataTypes.STRING },
         lastName: { type: DataTypes.STRING },
     }, {

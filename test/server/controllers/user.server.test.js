@@ -241,6 +241,7 @@ describe('UserController', function () {
             user: mockUser
           }
         });
+        console.log(mockUser);
         controllers.userController.save(req, res);
         res.on('end', function () {
           var data = JSON.parse(res._getData());

@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">70% </span>
+        <span class="strong">54.55% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>28/40</span>
+        <span class='fraction'>30/55</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">51.85% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>14/21</span>
+        <span class='fraction'>14/27</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">70% </span>
+        <span class="strong">54.55% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>28/40</span>
+        <span class='fraction'>30/55</span>
       </div>
     </div>
   </div>
@@ -133,13 +133,52 @@
 88
 89
 90
-91</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,6 +243,39 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -213,6 +285,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -221,13 +294,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-var models = require('../models');
-var encrypter = require('../utils/token');
-var mailer = require('../utils/mailer');
-var mailRedirect = process.env.MAIL_REDIRECT;
+const models = require('../models');
+const encrypter = require('../utils/token');
+const mailer = require('../utils/mailer');
+const mailRedirect = process.env.MAIL_REDIRECT;
 &nbsp;
 module.exports = {
   index: index,
@@ -235,7 +309,9 @@ module.exports = {
   destroy: destroy,
   update: update,
   save: save,
-  sendMail: sendMail
+  sendMail: sendMail,
+  findByUsername: findByUsername,
+  findByEmail: findByEmail,
 };
 &nbsp;
 function index(req, res) {
@@ -248,7 +324,7 @@ function index(req, res) {
 }
 &nbsp;
 function find(req, res) {
-  var id = req.params.id;
+  const id = req.params.id;
   models.User.findById(id).then(function (user) {
     res.status(200).json(user);
   })
@@ -258,7 +334,7 @@ function find(req, res) {
 }
 &nbsp;
 function destroy(req, res) {
-  var id = req.params.id;
+  const id = req.params.id;
   models.User.destroy({
     where: {
       id:id
@@ -282,7 +358,7 @@ function update(req, res) {
 }
 &nbsp;
 function save(req, res) {
-  var user = req.body.user;
+  const user = req.body.user;
   models.User.create(user).then(function (user) {
     return res.status(200).json(user);
   })
@@ -291,35 +367,70 @@ function save(req, res) {
   });
 }
 &nbsp;
+<span class="fstat-no" title="function not covered" >function findByUsername(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >  const username = req.params.username;</span>
+<span class="cstat-no" title="statement not covered" >  models.User.findOne({</span>
+    where: {
+      username: username
+    }
+  }).then(<span class="fstat-no" title="function not covered" >function (user) {</span>
+<span class="cstat-no" title="statement not covered" >    if(user) {</span>
+<span class="cstat-no" title="statement not covered" >      return res.status(200).json(user);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return res.status(404).json({ message: 'User not found' });</span>
+  }).catch(<span class="fstat-no" title="function not covered" >function (err) {</span>
+<span class="cstat-no" title="statement not covered" >    return res.status(500).json({message: err.message});</span>
+  });
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function findByEmail(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >  const email = req.body.email;</span>
+<span class="cstat-no" title="statement not covered" >  models.User.findOne({</span>
+    where: {
+      emailAddress: email
+    }
+  }).then(<span class="fstat-no" title="function not covered" >function (user) {</span>
+<span class="cstat-no" title="statement not covered" >    if(user) {</span>
+<span class="cstat-no" title="statement not covered" >      return res.status(200).json(user);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return res.status(404).json({ message: 'User not found' })</span>
+  }).catch(<span class="fstat-no" title="function not covered" >function (err) {</span>
+<span class="cstat-no" title="statement not covered" >    return res.status(500).json({ message: err.message });</span>
+  });
+}
+&nbsp;
 <span class="fstat-no" title="function not covered" >function sendMail(req, res) {</span>
-<span class="cstat-no" title="statement not covered" >  var emailAddress = req.body.email;</span>
-<span class="cstat-no" title="statement not covered" >  var hashString =  req.body.activationCode + '-' + emailAddress;</span>
-<span class="cstat-no" title="statement not covered" >  var subject = 'School Portal: Complete your registration';</span>
+<span class="cstat-no" title="statement not covered" >  const emailAddress = req.body.email;</span>
+<span class="cstat-no" title="statement not covered" >  const hashString =  req.body.activationCode + '-' + emailAddress;</span>
+<span class="cstat-no" title="statement not covered" >  const role = req.body.role;</span>
+<span class="cstat-no" title="statement not covered" >  const subject = 'School Portal: Complete your registration';</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  encrypter.createHash(hashString).then(<span class="fstat-no" title="function not covered" >function (hash) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var text = 'Welcome. Please follow this link to complete your registration ' +</span>
-      mailRedirect + '?token='  + hash;
-<span class="cstat-no" title="statement not covered" >    var regToken = {</span>
+<span class="cstat-no" title="statement not covered" >    const text = 'Welcome. Please follow this link to complete your registration ' +</span>
+      mailRedirect + '?token='  + encodeURIComponent(hash);
+<span class="cstat-no" title="statement not covered" >    const regToken = {</span>
       token: hash,
-      email: emailAddress
+      email: emailAddress,
+      role: role,
     };
 <span class="cstat-no" title="statement not covered" >    mailer.sendMail(emailAddress, subject, text).then(<span class="fstat-no" title="function not covered" >function (info) {</span></span>
 <span class="cstat-no" title="statement not covered" >      models.RegToken.create(regToken).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
 <span class="cstat-no" title="statement not covered" >        return res.status(200).json(info);</span>
       }).catch(<span class="fstat-no" title="function not covered" >function (err) {</span>
 <span class="cstat-no" title="statement not covered" >        res.status(500).json(err);</span>
-      })
+    });
     }).catch(<span class="fstat-no" title="function not covered" >function (err) {</span>
 <span class="cstat-no" title="statement not covered" >      return res.status(500).json(err);</span>
     });
   });
-}</pre></td></tr>
+}
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 19 2016 18:52:45 GMT+0100 (WAT)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 20 2016 17:44:32 GMT+0100 (WAT)
 </div>
 </div>
 <script src="../prettify.js"></script>
