@@ -1,3 +1,5 @@
+'use strict';
+
 var Q = require('q');
 var host = process.env.MAIL_HOST;
 var port = process.env.MAIL_PORT;
@@ -5,7 +7,7 @@ var username = process.env.MAIL_USER;
 var NodeMailer = require('nodemailer');
 var password = process.env.MAIL_PASSWORD;
 var protocol = process.env.MAIL_PROTOCOL;
-var from = process.env.MAIL_FROM
+var from = process.env.MAIL_FROM;
 
 
 module.exports = {

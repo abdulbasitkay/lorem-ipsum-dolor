@@ -12,7 +12,9 @@ module.exports = function (app) {
   app.get('/users/:id', controllers.userController.find);
   app.delete('/users/:id', controllers.userController.destroy);
   app.post('/users/email/confirm', controllers.userController.sendMail);
-  
+  app.get('/users.match/:usernme', controllers.userController.findByUsername);
+
+
 
   /* Auth routes */
   app.post('/users/token/confirm', controllers.authController.matchTokens);
@@ -31,6 +33,7 @@ module.exports = function (app) {
   app.put('/payment-type/:id', controllers.paymenttypeController.update);
   app.get('/payment-type/:id', controllers.paymenttypeController.find);
   app.delete('/payment-type', controllers.paymenttypeController.destroy);
+
 
   /* role routes */
   app.get('/roles', controllers.rolesController.index);

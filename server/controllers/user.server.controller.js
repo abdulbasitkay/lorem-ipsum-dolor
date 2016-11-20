@@ -1,3 +1,4 @@
+'use strict';
 
 var models = require('../models');
 var encrypter = require('../utils/token');
@@ -10,7 +11,9 @@ module.exports = {
   destroy: destroy,
   update: update,
   save: save,
-  sendMail: sendMail
+  sendMail: sendMail,
+  findByUsername: findByUsername,
+  findByEmail: findByEmail,
 };
 
 function index(req, res) {
@@ -66,9 +69,36 @@ function save(req, res) {
   });
 }
 
+function findByUsername(req, res) {
+  var username = req.body.username;
+  models.User.findOne({
+    where: {
+      username: username
+    }
+  }).then(function (user) {
+    return res.status(200).json(user);
+  }).catch(function (err) {
+    return res.status(500).json({message: err.message});
+  });
+}
+
+function findByEmail(req, res) {
+  var email = req.body.email;
+  models.User.findOne({
+    where: {
+      emailAddress: email
+    }
+  }).then(function (user) {
+    return res.status(200).json(user);
+  }).catch(function (err) {
+    return res.status(500).json({ message: err.message });
+  });
+}
+
 function sendMail(req, res) {
   var emailAddress = req.body.email;
   var hashString =  req.body.activationCode + '-' + emailAddress;
+  var role = req.body.role;
   var subject = 'School Portal: Complete your registration';
 
   encrypter.createHash(hashString).then(function (hash) {
@@ -76,14 +106,15 @@ function sendMail(req, res) {
       mailRedirect + '?token='  + hash;
     var regToken = {
       token: hash,
-      email: emailAddress
+      email: emailAddress,
+      role: role,
     };
     mailer.sendMail(emailAddress, subject, text).then(function (info) {
       models.RegToken.create(regToken).then(function () {
         return res.status(200).json(info);
       }).catch(function (err) {
         res.status(500).json(err);
-      })
+    });
     }).catch(function (err) {
       return res.status(500).json(err);
     });

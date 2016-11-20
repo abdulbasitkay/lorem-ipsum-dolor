@@ -6,7 +6,7 @@ module.exports = {
   login: login,
   getToken: getToken,
   matchTokens: matchTokens,
-}
+};
 
 function login(req, res) {
   var email = req.body.user.email;
@@ -19,10 +19,10 @@ function login(req, res) {
     if(!user) {
       return res.status(404).json({ message: 'User account does not exist' });
     }
-    user.matchPasswords(password, user.password).then(function (matched) {
+    user.matchPasswords(password, user.password).then(function () {
       return res.status(200).json({ user: user, token: TokenGen.createToken(user)});
     })
-    .catch(function (err) {
+    .catch(function () {
       return res.status(409).json({ message: 'Invalid username or password' });
     });
   })
@@ -34,7 +34,6 @@ function login(req, res) {
 function matchTokens(req, res) {
   var email = req.body.email;
   var token = req.body.token;
-  console.log(token, email);
   models.RegToken.findOne({
     where: {
       email: email,
@@ -42,7 +41,11 @@ function matchTokens(req, res) {
     }
   }).then(function (result) {
     if(result) {
-      return res.status(200).json({ success: true, message: 'Confirmation token found' })
+      return res.status(200).json({
+        success: true,
+        message: 'Confirmation token found',
+        role: result.role
+      });
     }
     return res.status(404).json({ success: false, message: 'Confirmation token not found' });
   }).catch(function (err) {

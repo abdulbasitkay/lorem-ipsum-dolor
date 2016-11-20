@@ -7,9 +7,9 @@ var Q = require('q');
 module.exports = function (Sequelize, DataTypes) {
     var User = Sequelize.define('User', {
         id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true, unique: true },
-        username: { type:DataTypes.STRING },
+        username: { type:DataTypes.STRING, unique: true },
         password: { type: DataTypes.STRING },
-        emailAddress: { type: DataTypes.STRING },
+        emailAddress: { type: DataTypes.STRING, unique: true },
         firstName: { type: DataTypes.STRING },
         lastName: { type: DataTypes.STRING },
     }, {
@@ -49,7 +49,7 @@ module.exports = function (Sequelize, DataTypes) {
         bcrypt.hash(user.password, salt, function (err, hashed) {
           if(err) {
             next(err);
-          } 
+          }
           user.password = hashed;
           next();
         });
