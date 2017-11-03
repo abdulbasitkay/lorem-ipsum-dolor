@@ -1,5 +1,5 @@
 TN:
-SF:/Users/Verem/Code/school-portal/server/models/index.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/models/index.js
 FN:19,(anonymous_1)
 FN:22,(anonymous_2)
 FN:27,(anonymous_3)
@@ -43,7 +43,7 @@ BRF:9
 BRH:7
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/models/payment-type.server.model.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/models/payment-type.server.model.js
 FN:3,(anonymous_1)
 FNF:1
 FNH:1
@@ -57,7 +57,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/models/payment.server.model.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/models/payment.server.model.js
 FN:3,(anonymous_1)
 FN:10,(anonymous_2)
 FNF:2
@@ -76,7 +76,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/models/registration-tokens.server.model.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/models/registration-tokens.server.model.js
 FN:4,(anonymous_1)
 FNF:1
 FNH:1
@@ -91,7 +91,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/models/role.server.model.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/models/role.server.model.js
 FN:3,(anonymous_1)
 FNF:1
 FNH:1
@@ -105,7 +105,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/models/student.server.model.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/models/student.server.model.js
 FN:2,(anonymous_1)
 FN:10,(anonymous_2)
 FNF:2
@@ -122,7 +122,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/models/term.server.model.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/models/term.server.model.js
 FN:3,(anonymous_1)
 FNF:1
 FNH:1
@@ -136,7 +136,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/models/user.server.model.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/models/user.server.model.js
 FN:7,(anonymous_1)
 FN:17,(anonymous_2)
 FN:22,(anonymous_3)
@@ -187,7 +187,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/controllers/index.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/controllers/index.js
 FNF:0
 FNH:0
 DA:3,1
@@ -205,7 +205,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/controllers/user.server.controller.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/controllers/user.server.controller.js
 FN:18,index
 FN:19,(anonymous_2)
 FN:22,(anonymous_3)
@@ -327,7 +327,7 @@ BRF:4
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/utils/token.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/utils/token.js
 FN:13,createToken
 FN:23,createHash
 FN:25,(anonymous_3)
@@ -367,7 +367,7 @@ BRF:4
 BRH:3
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/utils/mailer.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/utils/mailer.js
 FN:18,sendMail
 FN:37,(anonymous_2)
 FNF:2
@@ -401,7 +401,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/controllers/role.server.controller.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/controllers/role.server.controller.js
 FN:14,index
 FN:15,(anonymous_2)
 FN:18,(anonymous_3)
@@ -467,7 +467,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/controllers/term.server.controller.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/controllers/term.server.controller.js
 FN:13,find
 FN:15,(anonymous_2)
 FN:18,(anonymous_3)
@@ -533,7 +533,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/controllers/student.server.controller.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/controllers/student.server.controller.js
 FN:15,find
 FN:17,(anonymous_2)
 FN:20,(anonymous_3)
@@ -599,7 +599,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/controllers/payment.server.controller.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/controllers/payment.server.controller.js
 FN:12,index
 FN:13,(anonymous_2)
 FN:16,(anonymous_3)
@@ -665,7 +665,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/controllers/payment-type.server.controller.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/controllers/payment-type.server.controller.js
 FN:12,index
 FN:13,(anonymous_2)
 FN:16,(anonymous_3)
@@ -731,7 +731,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/controllers/auth.server.controller.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/controllers/auth.server.controller.js
 FN:9,login
 FN:16,(anonymous_2)
 FN:20,(anonymous_3)
@@ -765,7 +765,7 @@ BRF:2
 BRH:0
 end_of_record
 TN:
-SF:/Users/Verem/Code/school-portal/server/controllers/token.server.controller.js
+SF:/Users/Verem/Code/lorem-ipsum-dolor/server/controllers/token.server.controller.js
 FN:14,save
 FN:16,(anonymous_2)
 FN:18,(anonymous_3)
